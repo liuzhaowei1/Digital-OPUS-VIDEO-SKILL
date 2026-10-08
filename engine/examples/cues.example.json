@@ -1,0 +1,19 @@
+{
+  "bpm": 120, "beatOffset": 0, "duration": 20, "seed": 7, "key": "D minor",
+  "sections": [
+    {"at": 0,  "chord": "Dm", "drums": 0, "energy": 0.25},
+    {"at": 4,  "chord": "F",  "drums": 2, "energy": 0.65},
+    {"at": 16, "chord": "C",  "drums": 2, "energy": 0.8},
+    {"at": 20, "chord": "F",  "drums": 3, "energy": 0.9},
+    {"at": 24, "chord": "Dm", "drums": 4, "energy": 1.0},
+    {"at": 28, "chord": "Bb", "drums": 4, "energy": 1.0},
+    {"at": 30, "chord": "C",  "drums": 4, "energy": 1.0},
+    {"at": 32, "chord": "Dm", "drums": 0, "energy": 0.45}
+  ],
+  "cuts": [4, 4.5, 5, 5.5, 6, 8, 10, 12, 13, 13.5, 14, 16, 18, 20, 20.5, 21, 21.5, 22, 22.5, 23,
+           24, 25, 26, 27, 28, 28.5, 29, 30, 30.5, 31, 31.5, 32],
+  "hits": [24, 32],
+  "risers": [[1, 4], [17, 20], [30, 32]],
+  "silence": [[23.5, 24]],
+  "tail": 32
+}

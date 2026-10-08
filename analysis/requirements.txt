@@ -1,0 +1,11 @@
+# torch/torchaudio come from the CUDA index first (see docs/SETUP.md)
+demucs
+librosa
+scipy
+soundfile
+numba
+faster-whisper
+pypinyin
+matplotlib
+pedalboard
+mido

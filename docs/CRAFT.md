@@ -96,3 +96,16 @@
 | **一个情绪点一套花字** | 先给每段素材标一个情绪，再按情绪选字形、配色、贴纸和动画强度（快乐 = 黄粉立体字 + 星星，困惑 = 问号 + 汗滴，震惊 = 波普放射底 + 爆炸框）；多层描边 + 弹簧弹跳 | vlog、宠物、综艺剪辑等短视频包装 | 严肃资讯 | 《喵呜日记·综艺花字》 |
 | **点击反馈放大成转场** | 按钮被点后的涟漪（同心圆角矩形）向外荡开放大到整屏，直接成为下一个画面的底 | UI 操作链、产品演示 | 无交互动作的内容 | 《ClickUp AI·产品宣传》 |
 | **小字冷笑话** | 参数行、脚注、表单备注写一本正经的荒诞话 | 冷峻图解调性 | 可爱、温情调性 | 《AGI概念MV》 |
+
+## 三、镜头配方库（外部参考：video-shotcraft）
+
+手法库管全片层（贯穿线、概念变画面、结构骨架）；配方库管**单个镜头怎么动**：一个 UI 入场、转场、文字动效分几个动作阶段、各多少帧、参数典型值与调节手感、已知坑。两层互补，不互相替代。配方库只当参考读，不装成第二个做视频的 skill、不并进本 skill。可选：没 clone 就跳过本节。
+
+- **位置**：`$OPUS_HOME/_refs/video-shotcraft`（安装、更新见 `docs/SETUP.md`）。卡片 `references/shots/<类>/<卡名>.md`，10 类：opening、camera、transition、typography、ui-entrance、interaction、data、effects（光与强调）、rhythm、outro。动态样片在线看 https://vincentwei1021.github.io/video-shotcraft/ ，拿卡名回仓库找
+- **查卡**：`grep -H "^一句话\|^适用" $OPUS_HOME/_refs/video-shotcraft/references/shots/*/*.md | grep <关键词>`；卡头 frontmatter 有 `一句话 / 适用 / 时长 / 能量 / 标签`
+- **用卡**：读卡全文 → 按卡末「参考实现」定位 `demos/<类>/<卡名>/` 下的 `.tsx`（不凭卡名猜路径）→ 拷进 `$OPUS_REMOTION/src/compositions/<slug>/`，用到的 `demos/_fixtures/`（`Look` `Polish` `Brand` `Fixtures` `Motion` `PageCam2D`）一并带上并改 import 路径。组件按 30fps、1920×1080 写，导出 `<大写蛇形>_DURATION` 帧数常量；画面里的 video-shotcraft 品牌件（`Brand.tsx`）换掉。`demos/_legacy/` 是下架镜头，不选
+- **只读**：仓库里不 `npm install`、不改文件（否则 `git pull` 冲突），改动只在项目副本上做。拷 demo 前比对它 `template/package.json` 的 Remotion 版本与 `$OPUS_REMOTION`，跨大版本时先单镜头试渲
+- **适合**：DOM/CSS 为主的镜头——产品宣传·UI动效、片头·品牌短片、口播·讲解的版式段。内置引擎片只借动作阶段、帧数比例与参数，代码重写
+- **卡是起点不是模板**：方案书「选用的手法」引用卡名时照样写一句"为什么适合这条内容"；卡参数是在占位素材上调的，用真实素材回验
+- **不照搬**：`references/aesthetic-rules.md`（R/Q/S/C/P 判例）、`pipeline.md`（八阶段）、`guided-free-creation.md`（三种模式）是作者针对产品宣传片的做法，不当本 skill 通则、不替代 Step 1–7；个别判例某部片用得上时，在方案书写明借哪条、为什么适合这部片（方法观见 `docs/TYPES.md`）。它的声音方案（Freesound、`sfx-source.py`）、Motion Workbench、剪映导出未接入
+- **版权**：Apache-2.0；拷进项目的 demo 文件头留一行出处注释（仓库 URL + 卡名）。音频各有许可（仓库 `assets/audio/ATTRIBUTION.md`），不随 demo 拷

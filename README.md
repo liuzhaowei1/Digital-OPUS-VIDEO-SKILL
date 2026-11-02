@@ -24,6 +24,7 @@
 | 声音 | 按歌（分轨、节拍、逐词对齐）、按旁白（TTS + 对齐）、代码合成 BGM（声画读同一张时间表） | `docs/AUDIO.md`、`analysis/` |
 | 画面素材 | 代码画 / 生图出静态素材 / 用户照片转插画，角色一致性做法 | `docs/ASSETS.md` |
 | 渲染 | 内置 three.js 逐帧确定性引擎（改自 pdoom-video）+ Remotion 模板 | `engine/`、`remotion/` |
+| 镜头配方库（可选） | 接入外部的 video-shotcraft 镜头卡：单个镜头的动作阶段、帧数、参数与 Remotion 参考实现，只当参考读，不替代本 skill 的流程 | `docs/CRAFT.md`「三、镜头配方库」 |
 
 ---
 
@@ -105,6 +106,7 @@ git clone https://github.com/liuzhaowei1/Digital-OPUS-VIDEO-SKILL.git ~/.claude/
 - 内置引擎改自 [mexicat/pdoom-video](https://github.com/mexicat/pdoom-video)（MIT，作者 Giacomo Magnanini），也就是《I'm Upping My P(doom)》那部 MV 的源码。原许可保留在 `engine/LICENSE`，改动列在 `engine/NOTICE.md`，原版文档逐字保存在 `docs/upstream/`
 - 类型表和手法库里引用的 28 部片子，原片链接与作者见 [`docs/REFERENCES.md`](docs/REFERENCES.md)。本仓库不包含这些视频及其截图
 - 参考案例库 [awesome-opus5-5-videos](https://github.com/yihui-dev/awesome-opus5-5-videos)
+- 镜头配方库 [Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft)（Apache-2.0，作者 Vincent Wei）。本仓库不包含它的文件，按 `docs/SETUP.md` 自行 clone
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: opus-video
 description: This skill should be used whenever the user wants Claude to MAKE a video with code or other non-video-generation means (Remotion, three.js/WebGL, SVG, Blender, ffmpeg…; image models may supply still assets such as Q-version characters or scenes) — e.g. "/opus-video", "创建一个XXX风格的视频", "做一个《某某》风格的视频", "参考这个视频的风格做一个", "照着 <文件/项目> 的风格做视频", "用 remotion 做个视频", "做个动效/motion graphics", "把这个画成动画视频", "做个数据展示/图表动画/logo 动画/倒计时视频", "按这段配音/旁白做个视频", "我录了音，帮我配画面", "做个口播讲解视频", "用这些照片做个生日视频", "拆一下这个视频的风格". Sound drives the picture three ways — from a song, from a voiceover/narration, or synthesized together with the picture. Two lanes — a quick lane for one-line animations with no reference or aesthetic stakes (brief plan → still → render), and a full lane for reference-style, material-based or aesthetics-driven videos (break down the reference, decompose intent, ask only the necessary questions, treatment + style bible, stills, sample, build, self-review). Not for end-to-end text-to-video generation models or editing real footage.
-version: 1.5.0-oss
+version: 1.6.0-oss
 ---
 
 # /opus-video — 代码做视频
@@ -82,7 +82,7 @@ version: 1.5.0-oss
 1. **一段话创意**：讲什么、用什么方式讲、贯穿线
 2. **风格圣经**：色板（hex）、字体（各自角色）、材质与后期、运动规则（缓动、卡拍）、转场规则、**负面清单**（按本片风格写）。借骨架时写明"换掉参考的哪些标志性元素、换成什么"
 3. **选用的手法**：每条一句"为什么适合这条内容"，说不出理由就不用
-4. **分场表**：时间窗、内容/台词、画面、转场、对应音乐段落。有角色动作的镜头加一列「表演难度与藏法」：情绪交给脸和符号、难动作拉远/遮挡/用速度糊过去、近景少动（判据见 `docs/TYPES.md`「已知短板」）。每镜必有一列「实现依赖」，三态择一：**已有**（指到具体工具/文件，如 `spacetime-lens.ts`）/ **需新装**（装什么、装哪、工作量）/ **做不到**（改成什么替代画法）。判据是实查（`ls`/`grep` 引擎、Remotion 工作区、`$OPUS_HOME/_assets`），不凭印象标"已有"
+4. **分场表**：时间窗、内容/台词、画面、转场、对应音乐段落。有角色动作的镜头加一列「表演难度与藏法」：情绪交给脸和符号、难动作拉远/遮挡/用速度糊过去、近景少动（判据见 `docs/TYPES.md`「已知短板」）。每镜必有一列「实现依赖」，三态择一：**已有**（指到具体工具/文件，如 `spacetime-lens.ts`）/ **需新装**（装什么、装哪、工作量）/ **做不到**（改成什么替代画法）。判据是实查（`ls`/`grep` 引擎、Remotion 工作区、`$OPUS_HOME/_assets`），不凭印象标"已有"；单个镜头的动作（UI 入场、转场、文字动效、数据动效等）再查镜头配方库 `$OPUS_HOME/_refs/video-shotcraft`（`docs/CRAFT.md`「三、镜头配方库」，没装就跳过），借用的标「已有：卡名 + demo 路径」
 5. **技术选型与画面素材**：用什么栈、素材从哪来、为什么、本机能不能跑、渲染耗时和生图费用估计。分场表里所有「需新装」「做不到」汇总成一张清单放这里，随方案一起拍板：装还是绕在此定，不留到制作中途。制作中才发现缺能力 → 停下带选项问，不自行凑合或降级
 6. **声音方案**：有歌写来源和分析计划；有旁白时分场表就是台本，每段写转场、画面内容、字幕、配音语气四项，**台本经用户审过再录音**；网格合成写 BPM、段落和弦走向、鼓的密度曲线、上扬、抽空、重击的位置
 

@@ -13,6 +13,7 @@
 | JIT/字体缓存（numba、matplotlib） | `~/.cache/opus-video/` | — | 自动建，可随时删 |
 | 真实乐器（Surge XT、GM 音色库） | `$OPUS_HOME/_plugins/`、系统 | 合成 BGM 想用真实乐器音色时 | 见「真实乐器」 |
 | 参考案例库（awesome-opus5-5-videos） | `$OPUS_HOME/_refs/` | 想从该案例库取参考片时 | `git clone https://github.com/yihui-dev/awesome-opus5-5-videos $OPUS_HOME/_refs/awesome-opus5-5-videos` |
+| 镜头配方库（video-shotcraft，Apache-2.0，约 100 MB） | `$OPUS_HOME/_refs/video-shotcraft` | 做 DOM/CSS 为主的镜头（产品宣传、片头、版式动效）想借现成镜头动作时 | `git clone --depth 1 https://github.com/Vincentwei1021/video-shotcraft $OPUS_HOME/_refs/video-shotcraft`；更新 `git -C $OPUS_HOME/_refs/video-shotcraft pull`；只读参考：不 `npm install`、不装成 skill；用法见 `docs/CRAFT.md`「三、镜头配方库」 |
 | 风格库（拆过的参考片） | `$OPUS_LIBRARY`（默认 `$OPUS_HOME/library`） | — | 拆参考片时自动建（`docs/REFERENCE.md`） |
 
 可选 API（只在用到时需要）：
